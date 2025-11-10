@@ -13,6 +13,7 @@ const userPreferencesSchema = new mongoose.Schema({
   }
 });
 
+
 // define nested preferences explicitly
 userPreferencesSchema.add({
   preferences: {
