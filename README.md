@@ -1,134 +1,48 @@
-# **User Preferences – MongoDB Schema**
+User Preferences – MongoDB Schema
 
-## **Overview**
+A concise Mongoose schema for managing customizable user preferences in a web application.
+It demonstrates nested objects, enums, defaults, and validations following clean backend design standards.
 
-You're designing a backend schema to store customizable user preferences in a web application. In this assignment, your task is to define a Mongoose schema that includes nested objects, enums, default values, and validations.
+Overview
 
-> You'll write the schema in a `schema.js` file inside the boilerplate project.
+This schema allows users to store and update their personalized settings, including theme, language, and notification preferences.
+It ensures proper validation, unique usernames, and sensible default values.
 
-## **Schema Requirements**
+Project Purpose
 
-### **General Guidelines**
+This project demonstrates:
 
-- Use appropriate Mongoose data types and validators
-- Implement nested objects where logical (e.g., for grouped preferences)
-- Apply constraints like `required`, `default`, `unique`, and `enum`
-- Use meaningful default values and sensible field organization
+Effective schema design using nested structures for grouped user settings.
 
-### **Schema Fields**
+Applying Mongoose validations (required, enum, unique, default) in real-world use cases.
 
-#### **User Preferences Schema**
+Organizing data for maintainability and scalability in modern web applications.
 
-- `username`
+Example Document
+{
+  "username": "john_doe",
+  "preferences": {
+    "theme": "dark",
+    "language": "en",
+    "notifications": {
+      "email": true,
+      "sms": false
+    }
+  }
+}
 
-  - Type: String
-  - Required: true
-  - Unique: true
-  - Purpose: Unique identifier for the user
+Key Features
 
-- `preferences`
+Unique and required username
 
-  - Type: Object
-  - Required: true
-  - Purpose: Grouped settings related to user experience and notifications
+Nested preferences object for better organization
 
-- `preferences.theme`
+Enum validation for theme (light / dark)
 
-  - Type: String
-  - Enum: \['light', 'dark']
-  - Default: `'light'`
-  - Purpose: Preferred UI theme
+Default values for all fields
 
-- `preferences.language`
+Follows scalable, real-world schema design
 
-  - Type: String
-  - Default: `'en'`
-  - Purpose: Preferred display language
+Summary
 
-- `preferences.notifications`
-
-  - Type: Object
-  - Purpose: Settings related to how the user wants to receive notifications
-
-- `preferences.notifications.email`
-
-  - Type: Boolean
-  - Default: `true`
-  - Purpose: Whether the user wants email notifications
-
-- `preferences.notifications.sms`
-
-  - Type: Boolean
-  - Default: `false`
-  - Purpose: Whether the user wants SMS notifications
-
-## **Deliverable**
-
-- Write a MongoDB schema for the above user preferences system
-- Ensure all required fields, nested objects, enums, and default values are implemented correctly
-- Compile the schema into a model and export it from `schema.js`
-
-# **How to Fork and Set Up Your Repository**
-
-## **1. Fork the Repository on StackBlitz**
-
-- You will be provided with a **StackBlitz** link for the assignment.
-- Open the link in your browser and click on the **Fork** button in StackBlitz.
-  This will create a copy of the repository in your StackBlitz account.
-
----
-
-## **2. Clone the Repository to Your Personal GitHub**
-
-- After forking, you can download the project or push it directly to your personal GitHub repository:
-
-  - **Option 1: Download and Push**
-
-    1. Download the repository files from StackBlitz.
-
-    2. Open your terminal/command prompt, navigate to the project folder, and run:
-
-       ```bash
-       git init
-       git remote add origin <your_github_repo_url>
-       ```
-
-       Replace `<your_github_repo_url>` with your personal GitHub repository URL.
-
-    3. Commit and push the files to your GitHub repository:
-
-       ```bash
-       git add .
-       git commit -m "Completed the assignment"
-       git push -u origin main
-       ```
-
-  - **Option 2: Push Directly**
-
-    1. Use the **Push to GitHub** option in StackBlitz to directly connect and push the repository to your GitHub account.
-
-## **Submission Instructions**
-
-- Submit your GitHub repo link
-- Submit the Google Drive video link (ensure access permissions are open to `kalvium.community`)
-- Include a short 1–2 line note summarizing your schema design
-- **All of the above details must be added to a PDF file and uploaded on the submission portal.**
-
-### **PDF Submission Format**
-
-Title your submission file as:
-`mongoose-practice#3-schema_<yourname>.pdf`
-
-Your PDF should include:
-
-- GitHub repository link
-- Google Drive link to your video
-- A short note on the schema you wrote (1–2 lines)
-
----
-
-### **Example Submission Format**
-
-- GitHub: `https://github.com/<your_username>/user-preferences-schema`
-- Video: Google Drive link
-- Note: “I created a user preferences schema with nested objects, enums, and default values using Mongoose.”
+Created a Mongoose schema for user preferences with nested fields, enums, and validation to manage personalized user settings effectively.
