@@ -46,11 +46,6 @@ It ensures **data integrity** with validations, **unique usernames**, and **sens
 
 ---
 
-**GitHub:** [https://github.com/<your-username>/user-preferences-schema](https://github.com/<your-username>/user-preferences-schema)  
-**Video:** [Google Drive Link]  
-
----
-
 ### **Recommended GitHub Tagline**
 
 > **MongoDB schema for managing customizable user preferences using Mongoose.**
